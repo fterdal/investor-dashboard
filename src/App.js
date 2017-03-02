@@ -5,19 +5,15 @@ import SingleInvestment from './components/SingleInvestment'
 class App extends Component {
   constructor(props) {
     super(props);
-    this.state = {};
-  }
-
-  componentDidMount() {
-    
-    this.state = investors;
-    // console.log(this.state);
+    this.state = {data: investors};
   }
 
   render() {
+    const investments = this.state.data;
     return (
       <div className="App">
-        <p>{investors[0].first_name} {investors[0].last_name}</p>
+        {console.log(this.state)}
+        <p>{investments[0].first_name} {investments[0].last_name}</p>
         <table className="table table-hover">
           <thead>
             <tr>
@@ -31,16 +27,15 @@ class App extends Component {
           </thead>
           <tbody>
             <SingleInvestment id="11"
-                                 first_name="Homer"
-                                 last_name="Simpson"
-                                 transaction_amount="300"
-                                 email="donutzrule@springfield.city"
-                                 timestamp="2015-01-22T03:56:53Z"
-                                 transaction_id="WDTt4rjsJtrbiNHdT7pnoiFV"
-                                 mailing_address="4321 N Common Blvd, Springfield, OR 97321" />
+                               first_name="Homer"
+                               last_name="Simpson"
+                               transaction_amount="300"
+                               email="donutzrule@springfield.city"
+                               timestamp="2015-01-22T03:56:53Z"
+                               transaction_id="WDTt4rjsJtrbiNHdT7pnoiFV"
+                               mailing_address="4321 N Common Blvd, Springfield, OR 97321" />
           </tbody>
         </table>
-
       </div>
     );
   }
