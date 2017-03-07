@@ -26,14 +26,24 @@ class App extends Component {
             </tr>
           </thead>
           <tbody>
-            <SingleInvestment id="11"
-                               first_name="Homer"
-                               last_name="Simpson"
-                               transaction_amount="300"
-                               email="donutzrule@springfield.city"
-                               timestamp="2015-01-22T03:56:53Z"
-                               transaction_id="WDTt4rjsJtrbiNHdT7pnoiFV"
-                               mailing_address="4321 N Common Blvd, Springfield, OR 97321" />
+
+            {investments.map( (item, index) => {
+              const mailing_address = item.address + item.city +
+                                item.state + item.zip + item.country
+              return (
+                <SingleInvestment
+                   index={index}
+                   id={item.id}
+                   first_name={item.first_name}
+                   last_name={item.last_name}
+                   transaction_amount={item.prod_price}
+                   email={item.email}
+                   timestamp={item.created_at}
+                   transaction_id={item.transaction_id}
+                   mailing_address={mailing_address}
+                />
+              )
+            })}
           </tbody>
         </table>
       </div>
