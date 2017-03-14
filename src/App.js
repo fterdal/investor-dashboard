@@ -1,8 +1,9 @@
 import React, { Component } from 'react';
-import investors from '../data.json';
 import SingleInvestment from './components/SingleInvestment';
 import InvestmentsTable from './components/InvestmentsTable';
 import Filter from './components/Filter';
+
+import investors from '../data.json';
 import product_map from '../product_map.json';
 
 class App extends Component {
