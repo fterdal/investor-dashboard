@@ -18,21 +18,15 @@ export default class SingleInvestment extends Component {
 
   render() {
     let investmentInfo = this.props;
-    // console.log("mailing_address: " + investmentInfo.mailing_address);
-    let mailing_address = "";
-    if (investmentInfo.mailing_address === "") {
-      mailing_address = "No address found";
-    } else {
-      mailing_address = investmentInfo.mailing_address;
-    }
     return (
       <tr>
         <th>{investmentInfo.id}</th>
+        {console.log(investmentInfo.id.propType)}
         <td>{investmentInfo.first_name} {investmentInfo.last_name}</td>
         <td>{investmentInfo.transaction_amount}</td>
         <td>{investmentInfo.email}</td>
         <td>{investmentInfo.product_id}</td>
-        <td>{mailing_address}</td>
+        <td>{investmentInfo.mailing_address || "No address found"}</td>
         <td>{investmentInfo.timestamp}</td>
       </tr>
     );

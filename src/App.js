@@ -42,7 +42,7 @@ class App extends Component {
                      last_name={item.last_name}
                      transaction_amount={item.prod_price}
                      email={item.email}
-                     product_id={item.product_id}
+                     product_id={parseInt( item.product_id, 10 )}
                      timestamp={item.created_at}
                      transaction_id={item.transaction_id}
                      mailing_address={mailing_address}
