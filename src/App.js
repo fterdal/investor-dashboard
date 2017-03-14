@@ -3,7 +3,7 @@ import investors from '../data.json';
 import SingleInvestment from './components/SingleInvestment';
 import InvestmentsTable from './components/InvestmentsTable';
 import Filter from './components/Filter';
-
+import product_map from '../product_map.json';
 
 class App extends Component {
   constructor(props) {
@@ -13,9 +13,13 @@ class App extends Component {
 
   render() {
     const investments = this.state.data;
+    const filteredInvestments = investments.filter(item => {
+      return item.product_id === 2;
+    })
     return (
       <div className="App">
-        <InvestmentsTable data={investments} />
+
+        <InvestmentsTable investments={filteredInvestments} />
       </div>
     );
   }

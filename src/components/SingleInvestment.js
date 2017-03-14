@@ -17,14 +17,14 @@ export default class SingleInvestment extends Component {
 
   render() {
     let investmentInfo = this.props;
-    console.log(investmentInfo.first_name.propType);
     return (
       <tr>
         <th>{investmentInfo.id}</th>
         <td>{investmentInfo.first_name} {investmentInfo.last_name}</td>
         <td>{investmentInfo.transaction_amount}</td>
         <td>{investmentInfo.email}</td>
-        <td>{investmentInfo.product_id}</td>
+        {/* <td>{investmentInfo.product_id}</td> */}
+        <td>{investmentInfo.offering}</td>
         <td>{investmentInfo.mailing_address || "No address found"}</td>
         <td>{investmentInfo.timestamp}</td>
       </tr>
