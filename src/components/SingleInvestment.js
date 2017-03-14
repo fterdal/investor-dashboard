@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-
+import Filter from './Filter';
 
 export default class SingleInvestment extends Component {
   constructor(props) {
@@ -31,6 +31,7 @@ export default class SingleInvestment extends Component {
         <td>{investmentInfo.first_name} {investmentInfo.last_name}</td>
         <td>{investmentInfo.transaction_amount}</td>
         <td>{investmentInfo.email}</td>
+        <td>{investmentInfo.product_id}</td>
         <td>{mailing_address}</td>
         <td>{investmentInfo.timestamp}</td>
       </tr>
