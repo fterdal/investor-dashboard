@@ -16,10 +16,12 @@ class App extends Component {
     const investments = this.state.data;
     const filteredInvestments = investments.filter(item => {
       return item.product_id === 2;
+      //return true;
     })
+    const companies = product_map;
     return (
       <div className="App">
-
+        <Filter companies={companies} />
         <InvestmentsTable investments={filteredInvestments} />
       </div>
     );
